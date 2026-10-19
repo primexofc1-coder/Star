@@ -254,7 +254,7 @@ document.addEventListener('change',e=>{if(e.target.id==='lim'){u.limit=+e.target
 
 if(document.readyState!=='loading')boot();
 if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
-const hide=()=>setTimeout(()=>{const x=document.getElementById('splash');if(x){x.classList.add('out');setTimeout(()=>x.remove(),600)}},2600);document.readyState==='complete'?hide():addEventListener('load',hide);setTimeout(()=>{const x=document.getElementById('splash');if(x)x.remove()},7000);
+setTimeout(()=>{const x=document.getElementById('splash');if(x)x.remove()},1000);
 </script>
 </body>
 </html>
