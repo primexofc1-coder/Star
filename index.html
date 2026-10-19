@@ -247,14 +247,12 @@ function calcLoan(){const p=toC($('#lamt').value/100),n=+$('#lmo').value,m=pmt(p
 document.addEventListener('click',e=>{const el=e.target.closest('[data-act]');if(el&&A[el.dataset.act])A[el.dataset.act](el.dataset.v&&el.dataset.act!=='tab'&&el.dataset.act!=='flt'&&el.dataset.act!=='rc'&&el.dataset.act!=='box'?el.dataset.v:el)});
 document.addEventListener('input',e=>{const t=e.target;
   if(t.dataset&&t.dataset.mask==='cpf')t.value=mCpf(t.value);
-  if(t.dataset&&t.dataset.mask==='tel')t.value=mTel(t.value);
-  if(t.id==='lamt'||t.id==='lmo')calcLoan();
-  if(t.id==='lim')$('#lv').textContent=brl(+t.value)});
-document.addEventListener('change',e=>{if(e.target.id==='lim'){u.limit=+e.target.value;commit()}});
-
-if(document.readyState!=='loading')boot();
-if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
-setTimeout(()=>{const x=document.getElementById('splash');if(x)x.remove()},1000);
+  <script>
+  setTimeout(function() {
+    var splash = document.getElementById('splash');
+    if (splash) {
+      splash.style.display = 'none';
+      splash.remove();
+    }
+  }, 800);
 </script>
-</body>
-</html>
